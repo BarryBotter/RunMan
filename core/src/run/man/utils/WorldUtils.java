@@ -28,7 +28,7 @@ public class WorldUtils {
         PolygonShape shape = new PolygonShape();
         shape.setAsBox(constants.GROUND_WIDTH / 2, constants.GROUND_HEIGHT / 2);
         body.createFixture(shape, constants.GROUND_DENSITY);
-        body.setUserData(new GroundUserData());
+        body.setUserData(new GroundUserData(constants.GROUND_WIDTH, constants.GROUND_HEIGHT));
         shape.dispose();
         return body;
     }

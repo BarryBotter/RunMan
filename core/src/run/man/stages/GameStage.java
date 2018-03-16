@@ -17,6 +17,7 @@ import com.badlogic.gdx.utils.Scaling;
 import com.badlogic.gdx.utils.viewport.ScalingViewport;
 
 //import run.man.actors.Background;
+import run.man.actors.Background;
 import run.man.actors.Enemy;
 import run.man.actors.Ground;
 import run.man.actors.Runner;
@@ -49,9 +50,9 @@ public class GameStage extends Stage implements ContactListener {
     private Rectangle screenLeftSide;
 
     public GameStage() {
+        super(new ScalingViewport(Scaling.stretch, VIEWPORT_WIDTH, VIEWPORT_HEIGHT,
+                new OrthographicCamera(VIEWPORT_WIDTH, VIEWPORT_HEIGHT)));
         renderer = new Box2DDebugRenderer();
-        ///super(new ScalingViewport(Scaling.stretch, VIEWPORT_WIDTH, VIEWPORT_HEIGHT,
-             //   new OrthographicCamera(VIEWPORT_WIDTH, VIEWPORT_HEIGHT)));
         setUpCamera();
         setUpWorld();
         setupTouchControlAreas();
@@ -158,9 +159,9 @@ public class GameStage extends Stage implements ContactListener {
         createEnemy();
     }
 
-    //private void setUpBackground() {
-     //   addActor(new Background());
-    //}
+    private void setUpBackground() {
+        addActor(new Background());
+    }
 
     private void setUpGround() {
         ground = new Ground(WorldUtils.createGround(world));

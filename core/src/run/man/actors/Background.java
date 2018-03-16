@@ -14,7 +14,7 @@ public class Background extends Actor {
     private final TextureRegion textureRegion;
     private Rectangle textureRegionBounds1;
     private Rectangle textureRegionBounds2;
-    private int speed = 100;
+    private int speed = 10;
 
     public Background() {
         textureRegion = new TextureRegion(new Texture(Gdx.files.internal(constants.BACKGROUND_IMAGE_PATH)));
